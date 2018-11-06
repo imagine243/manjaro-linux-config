@@ -1,16 +1,51 @@
-// Place your settings in this file to overwrite the default settings
-// 8eb886bced2cb5e883de116f869c6936
 {
-    "editor.fontFamily": "'Monaco', 'Ubuntu Mono derivative Powerline', 'Microsoft YaHei",
-    "editor.fontSize": 16,
-    "python.pythonPath": "python3",
-    "editor.rulers": [80],
-    "window.showFullPath": true,
-    "extensions.autoUpdate": true,
-    "terminal.integrated.fontSize": 16,
-    "guides.normal.width": 5,
-    "guides.active.width": 3,
-    "window.menuBarVisibility": "toggle",
+    "workbench.editor.enablePreview": false,
+    "workbench.iconTheme": "vscode-icons",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    },
+
+    "gitlens.keymap": "alternate",
+    "gitlens.historyExplorer.enabled": true,
+
+    "sync.gist": "df213e3b87feb84045fc4ea6bd03e1e8",
+    "sync.quietSync": false,
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true,
+    "sync.autoDownload": true,
+    "sync.autoUpload": true,
+    "sync.forceDownload": false,
+
+    // Configure glob patterns for excluding files and folders.
+    "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/*.meta": true,
+    "**/*.*.meta": true,
+    "**/*.unity": true,
+    "**/*.unityproj": true,
+    "**/*.mat": true,
+    "**/*.fbx": true,
+    "**/*.FBX": true,
+    "**/*.tga": true,
+    "**/*.cubemap": true,
+    "**/*.prefab": true,
+    "**/Library": true,
+    "**/ProjectSettings": true,
+    "**/Temp": true
+    },
+
+
+    "window.zoomLevel": 0,
     // auto save
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1000,
@@ -18,29 +53,11 @@
     "files.trimTrailingWhitespace": true,
     // cpp
     "C_Cpp.clang_format_path": "clang",
-    // vim
-    "vim.useSystemClipboard": true,
-    "vim.leader": ",",
-    "vim.otherModesKeyBindings": [{
-        "before": ["leader", "w"],
-        "after": [],
-        "commands": [{
-            "command": "workbench.action.files.save",
-            "args": []
-        }]
-    }],
 
-    "vim.otherModesKeyBindingsNonRecursive": [],
 
-    // sync frome my github
-    "sync.gist": "",
-    "sync.lastUpload": "",
-    "sync.autoDownload": false,
-    "sync.autoUpload": false,
-    "sync.lastDownload": "",
-    "sync.version": 244,
-    "sync.showSummary": true,
-    "sync.forceDownload": false,
-    "sync.workspaceSync": false,
-    "sync.anonymousGist": false
+     // The base path of image url.You can use variable ${currentFileDir} and ${projectRoot}. ${currentFileDir} will be replace by the path of directory that contain current editing file. ${projectRoot} will be replace by path of the project opened in vscode. If you set basePath to empty String, it will insert absolute path to file.
+    "pasteImage.path": "${currentFileDir}/pic",
+
+    "workbench.colorTheme": "Monokai",
+    "python.pythonPath": "python3",
 }
