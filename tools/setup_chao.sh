@@ -75,8 +75,6 @@ config_vim() {
     check_software cmake 'pacman -S --noconfirm'
     # powerline-fonts
     check_software powerline-fonts 'pacman -S --noconfirm'
-    # git clone vim config
-    git clone https://github.com/imagine243/dotfile.git ~/dotfile
 
 
     # for .vimrc
@@ -90,8 +88,15 @@ config_vim() {
         mv $HOME/.vim $HOME/.vim.bak
     fi
 
+    if [ -d "$HOME/dotfile"]; then
+	print_log "mv $HOME/dotfile to $HOME/dotfile.bak"
+	mv $HOME/dotfile $HOME/dotfile.bak
+    fi
+
+    # git clone vim config
+    git clone https://github.com/imagine243/dotfile.git ~/dotfile
     # do config
-    echo "source ~/dotfile/vim_config/init.vim"
+    echo "source ~/dotfile/vim_config/init.vim" > $HOME/.vimrc
     # download vim plug
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -138,21 +143,21 @@ config_vscode() {
 }
 # i3wm
 config_i3() {
-    # print_log "do for i3wm"
-    # # for .i3
-    # if [ -d "$HOME/.i3" ]; then
-    #     print_log "mv $HOME/.i3 to $HOME/.i3.bak"
-    #     mv $HOME/.i3 $HOME/.i3.bak
-    # fi
-    # # for polybar
-    # if [  -d "$HOME/.config/polybar" ]; then
-    #     print_log "mv $HOME/.config/polybar to $HOME/.config/polybar.bak"
-    #     mv $HOME/.config/polybar  $HOME/.config/polybar.bak
-    # fi
+    print_log "do for i3wm"
+    # for .i3
+    if [ -d "$HOME/.i3" ]; then
+        print_log "mv $HOME/.i3 to $HOME/.i3.bak"
+        mv $HOME/.i3 $HOME/.i3.bak
+    fi
+    # for polybar
+    if [  -d "$HOME/.config/polybar" ]; then
+        print_log "mv $HOME/.config/polybar to $HOME/.config/polybar.bak"
+        mv $HOME/.config/polybar  $HOME/.config/polybar.bak
+    fi
 
-    # ln -sfn $relative_location/../res/i3wm $HOME/.i3
-    # ln -sfn $relative_location/../res/polybar $HOME/.config/polybar
-    # echo "done"
+    ln -sfn $relative_location/../res/i3wm $HOME/.i3
+    ln -sfn $relative_location/../res/polybar $HOME/.config/polybar
+    echo "done"
 }
 
 # install i3wm

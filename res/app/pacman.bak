@@ -2,7 +2,9 @@ adobe-source-code-pro-fonts
 archlinuxcn-keyring
 autojump
 clang
+clion
 cmake
+ctags
 dnsutils
 electronic-wechat-git
 evince
@@ -31,6 +33,7 @@ pandoc
 papirus-icon-theme
 powerline-fonts
 proxychains
+pycharm-community-edition
 python2-pip
 python-pip
 qt-recordmydesktop
@@ -60,8 +63,3 @@ yaourt
 zeal
 zsh
 flameshot
-gvim
-mono
-jdk
-the_silver_searcher
-ripgrep
